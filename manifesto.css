@@ -1,0 +1,222 @@
+.page {
+	width: 21cm;
+	height: 29.7cm;
+	margin: 1cm auto;
+	border: 1px #D3D3D3 solid;
+	border-radius: 5px;
+	background: white;
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+	counter-increment: pageno;
+}
+
+.leader-page {
+	counter-reset: pageno;
+}
+
+/* IMAGES */
+
+.front-page {
+	background-image: url("front-page.png");
+}
+
+.front-page > img {
+	size: A4;
+	position: absolute;
+	left: 0;
+	top: 0;
+	right: 0;
+	padding: 0;
+	z-index: -1;
+	display: none;
+}
+
+#constitutional-header {
+	background-image: url("headers/constitutional.png");
+}
+
+#foreign-header {
+	background-image: url("headers/foreign.png");
+}
+
+#environment-header {
+	background-image: url("headers/environment.png");
+}
+
+#education-header {
+	background-image: url("headers/education.png");
+}
+
+#health-header {
+	background-image: url("headers/health.png");
+}
+
+#culture-header {
+	background-image: url("headers/culture.png");
+}
+
+#welfare-header {
+	background-image: url("headers/welfare.png");
+}
+
+#housing-header {
+	background-image: url("headers/housing.png");
+}
+
+#justice-header {
+	background-image: url("headers/justice.png");
+}
+
+#transport-header {
+	background-image: url("headers/transport.png");
+}
+
+#devolved-header {
+	background-image: url("headers/devolved.png");
+}
+
+div.back-page {
+	background-color: #660066;
+	height: 100%;
+}
+
+
+.back-page > img {
+	width: 10cm;
+	margin: calc((29.7cm - 10cm - 10em)/2) calc((21cm - 10cm)/2) calc((29.7cm - 10cm - 10em)/2) calc((21cm - 10cm)/2 - 1.5em);
+}
+
+.back-page > footer {
+	font-size: 1em;
+	text-align: center;
+	font-family: "Nunito Sans";
+	margin: 0 auto;
+	width: 10cm;
+	
+}
+/* HEADER */
+
+header {
+	height: calc(29.7cm/4 - 1em);
+	display: block;
+	position: relative;
+	font-family: "Nunito Sans";
+	color: white;
+}
+
+header > h1 {
+	font-size: 3em;
+	position: absolute;
+	bottom: 0;
+}
+
+.leader-page > header {
+	height: 100px;
+	color: #660066;
+}
+
+.leader-page > header > h1 {
+	position: initial;
+	bottom: initial;
+}
+
+.front-page > header > h1, h2 {
+	position: initial;
+	color: #E0C050;
+	text-transform: uppercase;
+	text-align-last: center;
+	margin: 1cm auto 0 auto;
+}
+
+.manifesto-content > header {	
+	padding-left: 1em;
+}
+
+/* CONTENT */
+
+content {
+	font-family: "Nunito Sans";
+	text-align: justify;
+	text-justify: inter-word;
+	padding: 0 1em;
+}
+
+.manifesto-content > content {
+	height: calc(3*29.7cm/4 - 28px);
+	display: block;
+}
+
+.content-page > content {
+	columns: 2;
+  	column-gap: 1em;
+  	padding-top: 1em;
+}
+
+.leader-page > content {
+	height: calc(29.7cm - 100px - 3em);
+	width: 11cm;
+	display: block;
+	columns: initial;
+}
+
+
+.leader-page > img {
+	float: right;
+	display: initial;
+}
+
+.signature {
+	font-family: "The Nautigal";
+	font-size: 30px;
+}
+
+.bigger-font > content {
+	font-size: 1.1em;
+}
+
+/* FOOTER */
+
+.manifesto-content > footer {
+	font-family: "Nunito Sans";
+	height: 1em;
+	display: block;
+	margin: 0 auto;
+	text-align: center;
+	background-color: #660066;
+	color: white;
+	top: 0.5em;
+	padding-bottom: 4px;
+	position: relative;
+}
+
+.manifesto-content > footer:after {
+	content: counter(pageno);
+}
+
+@page {
+	size: A4;
+	margin: 0;
+}
+
+@media print {
+	html, body {
+		width: 210mm;
+		height: 297mm;
+	}
+	.page {
+		height: initial;
+		max-height: 29.7cm;
+		margin: 0;
+		border: initial;
+		border-radius: initial;
+		width: initial;
+		box-shadow: initial;
+		background: initial;
+		page-break-after: always;
+	}
+	.front-page > img {
+		display: initial;
+	}
+	.front-page {
+		background-image: none;
+	}
+}
