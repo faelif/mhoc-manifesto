@@ -1,6 +1,11 @@
 # mhoc-manifesto
 Manifesto for the Pirate Party on MHOC, a Reddit-based simulation of British politics.
 
+How to build
+--------
+
+The manifesto PDF can be built using the `prince` tool, available in Debian in the `prince` package. The command `prince manifesto.html` will create the `manifesto.pdf` file.
+
 Licensing
 --------
 

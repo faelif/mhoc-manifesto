@@ -7,6 +7,7 @@
 	background: white;
 	box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 	counter-increment: pageno;
+	overflow: hidden;
 }
 
 .leader-page {
@@ -30,48 +31,24 @@
 	display: none;
 }
 
-#constitutional-header {
-	background-image: url("headers/constitutional.png");
+#save-the-planet-header {
+	background-image: url("headers/save-the-planet.png");
 }
 
-#foreign-header {
-	background-image: url("headers/foreign.png");
+#fight-for-workers-header {
+	background-image: url("headers/fight-for-workers.png");
 }
 
-#environment-header {
-	background-image: url("headers/environment.png");
+#distribute-power-header {
+	background-image: url("headers/distribute-power.png");
 }
 
-#education-header {
-	background-image: url("headers/education.png");
+#save-lives-header {
+	background-image: url("headers/save-lives.png");
 }
 
-#health-header {
-	background-image: url("headers/health.png");
-}
-
-#culture-header {
-	background-image: url("headers/culture.png");
-}
-
-#welfare-header {
-	background-image: url("headers/welfare.png");
-}
-
-#housing-header {
-	background-image: url("headers/housing.png");
-}
-
-#justice-header {
-	background-image: url("headers/justice.png");
-}
-
-#transport-header {
-	background-image: url("headers/transport.png");
-}
-
-#devolved-header {
-	background-image: url("headers/devolved.png");
+#build-a-better-britain-header {
+	background-image: url("headers/build-a-better-britain.png");
 }
 
 div.back-page {
@@ -81,8 +58,8 @@ div.back-page {
 
 
 .back-page > img {
-	width: 10cm;
-	margin: calc((29.7cm - 10cm - 10em)/2) calc((21cm - 10cm)/2) calc((29.7cm - 10cm - 10em)/2) calc((21cm - 10cm)/2 - 1.5em);
+	width: 15cm;
+	margin: calc((29.7cm - 15cm - 10em)/2) calc((21cm - 15cm)/2) calc((29.7cm - 15cm - 10em)) calc((21cm - 15cm)/2 - 1.5em);
 }
 
 .back-page > footer {
@@ -91,8 +68,16 @@ div.back-page {
 	font-family: "Nunito Sans";
 	margin: 0 auto;
 	width: 10cm;
-	
 }
+
+.five-points-page {
+	background-color: #660066;
+}
+
+.five-points-page > * {
+	background-color: #660066;
+}
+
 /* HEADER */
 
 header {
@@ -121,17 +106,39 @@ header > h1 {
 
 .front-page > header > h1, h2 {
 	position: initial;
-	color: #E0C050;
+	color: #660066;
 	text-transform: uppercase;
 	text-align-last: center;
 	margin: 1cm auto 0 auto;
 }
 
-.manifesto-content > header {	
+.manifesto-content > header {
 	padding-left: 1em;
 }
 
+.five-points-page > header {
+	float: center;
+	font-size: 0.8em;
+}
+
+.five-points-page > header > h1 {
+	text-align: center;
+	width: 100%;
+}
+
 /* CONTENT */
+
+.content-page > header > h2 {
+	margin-top: 0;
+	color: white;
+	position: absolute;
+	bottom: 0;
+}
+
+content > p {
+	margin-top: 1.45em;
+	margin-bottom: 0;
+}
 
 content {
 	font-family: "Nunito Sans";
@@ -173,6 +180,23 @@ content {
 	font-size: 1.1em;
 }
 
+.five-points-page > content {
+	height: calc(3*29.7cm/4 - 31px);
+	color: white;
+	columns: 1;
+}
+
+#five-points-list {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+#five-points-list > li {
+	font-size: 4em;
+	text-align: center;
+}
+
 /* FOOTER */
 
 .manifesto-content > footer {
@@ -184,12 +208,17 @@ content {
 	background-color: #660066;
 	color: white;
 	top: 0.5em;
-	padding-bottom: 4px;
+	padding-bottom: 12px;
 	position: relative;
 }
 
 .manifesto-content > footer:after {
 	content: counter(pageno);
+}
+
+.five-points-page > footer {
+	top: 0;
+	height: calc(1em + 8px);
 }
 
 @page {
