@@ -1,0 +1,264 @@
+.page {
+	width: 21cm;
+	height: 29.7cm;
+	margin: 1cm auto;
+	border: 1px #D3D3D3 solid;
+	border-radius: 5px;
+	background: white;
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+	counter-increment: pageno;
+	overflow: hidden;
+}
+
+.leader-page {
+	counter-reset: pageno;
+}
+
+/* IMAGES */
+
+.front-page {
+	background-image: url("front-page.png");
+}
+
+.front-page > img {
+	size: A4;
+	position: absolute;
+	left: 0;
+	top: 0;
+	right: 0;
+	padding: 0;
+	z-index: -1;
+	display: none;
+}
+
+#economic-security-header {
+	background-image: url("headers/economic-security.png");
+}
+
+#public-services-header {
+	background-image: url("headers/public-services.png");
+}
+
+#sustainable-growth-header {
+	background-image: url("headers/sustainable-growth.png");
+}
+
+#trust-the-public-header {
+	background-image: url("headers/trust-the-public.png");
+}
+
+#accountability-header {
+	background-image: url("headers/accountability.png");
+}
+
+div.back-page {
+	background-color: #008080;
+	height: 100%;
+}
+
+
+.back-page > img {
+	width: 15cm;
+	margin: calc((29.7cm - 15cm - 10em)/2) calc((21cm - 15cm)/2) calc((29.7cm - 15cm - 10em)) calc((21cm - 15cm)/2);
+}
+
+.back-page > footer {
+	font-size: 1em;
+	text-align: center;
+	font-family: "Nunito Sans";
+	margin: 0 auto;
+	width: 10cm;
+}
+
+.five-points-page {
+	background-color: #008080;
+}
+
+.five-points-page > * {
+	background-color: #008080;
+}
+
+/* HEADER */
+
+header {
+	margin-top: -20px;
+	height: calc(29.7cm/4 - 1em);
+	display: block;
+	position: relative;
+	font-family: "Nunito Sans";
+	color: white;
+}
+
+header > h1, h2 {
+	padding-left: 1cm;
+	font-size: 3em;
+	position: absolute;
+	bottom: 0;
+}
+
+.leader-page > header {
+	height: 100px;
+	color: #008080;
+}
+
+.leader-page > header > h1 {
+	position: initial;
+	bottom: initial;
+}
+
+.front-page > header > h1, h2 {
+	position: initial;
+	color: #00a0a0;
+	text-transform: uppercase;
+	text-align-last: center;
+	margin: 1cm auto 0 auto;
+}
+
+.manifesto-content > header {
+	padding-left: 1em;
+}
+
+.five-points-page > header {
+	float: center;
+	font-size: 0.8em;
+}
+
+.five-points-page > header > h1 {
+	text-align: center;
+	width: 100%;
+}
+
+/* CONTENT */
+
+.content-page > header > h2 {
+	margin-top: 0;
+	color: white;
+	position: absolute;
+	bottom: 0;
+}
+
+content > p {
+	margin-top: 1.45em;
+	margin-bottom: 0;
+}
+
+content {
+	font-family: "Nunito Sans";
+	text-align: justify;
+	text-justify: inter-word;
+	padding: 0 2cm;
+}
+
+.manifesto-content > content {
+	height: calc(3*29.7cm/4 - 4px);
+	display: block;
+}
+
+.content-page > content {
+	columns: 2;
+  	column-gap: 1em;
+	column-fill: auto;
+  	padding-top: 1em;
+}
+
+.leader-page > content {
+	height: calc(29.7cm - 100px - 3em);
+	width: 11cm;
+	display: block;
+	columns: initial;
+}
+
+
+.leader-page > img {
+	float: right;
+	display: initial;
+}
+
+.signature {
+	font-family: "The Nautigal";
+	font-size: 30px;
+}
+
+.bigger-font > content {
+	font-size: 1.1em;
+}
+
+.five-points-page > content {
+	height: calc(29.7cm - 11.5em);
+	color: white;
+	columns: 1;
+	padding: 5em 1em;
+	text-align: justify;
+	text-align-last: center;
+}
+
+.five-points-page p {
+	font-size: 2em;
+	padding: 0 1em;
+}
+
+#five-points-list {
+	padding-left: 5em;
+	padding-right: 5em;
+	list-style-position: inside;
+}
+
+#five-points-list li {
+	font-size: 1.3em;
+	margin: 10px 0;
+}
+
+/* FOOTER */
+
+.manifesto-content > footer {
+	font-family: "Nunito Sans";
+	height: 1em;
+	display: block;
+	margin: 0 auto;
+	text-align: center;
+	background-color: #008080;
+	color: white;
+	top: 0.5em;
+	padding-bottom: 12px;
+	position: relative;
+}
+
+.manifesto-content > footer:after {
+	content: counter(pageno);
+}
+
+.five-points-page > footer {
+	top: 0;
+	height: calc(1em + 8px);
+}
+
+@page {
+	size: 230mm 297mm;
+	/* width: 230mm; 
+	height: 297mm; */
+	margin: 0;
+}
+
+@media print {
+	html, body {
+		width: 230mm; 
+		height: 297mm;
+	}
+	.page {
+		height: initial;
+		max-height: 29.7cm;
+		margin: 0;
+		border: initial;
+		border-radius: initial;
+		width: initial;
+		box-shadow: initial;
+		background: initial;
+		page-break-after: always;
+	}
+	.front-page > img {
+		display: initial;
+	}
+	.front-page {
+		background-image: none;
+	}
+}
